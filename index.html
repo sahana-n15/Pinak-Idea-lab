@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pinak Lab</title>
+    <style>
+        body {
+            background-color: yellow;
+            margin: 0;
+        }
+        
+        .container {
+            text-align: center;
+            color: white;
+        }
+        
+        .smiley {
+            width: 2cm;
+            height: 2cm;
+            transform: rotate(90deg);
+        }
+        
+        .footer {
+            background-color: red;
+            height: 2cm;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            overflow: hidden; /* Added overflow property to hide content outside the footer */
+        }
+        
+        .footer:before,
+        .footer:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 2cm;
+            height: 2cm;
+            background-color: red;
+        }
+        
+        .footer:before {
+            left: calc(50% - 1.5cm); /* Adjusted the position to create a 2cm slit */
+            transform: skew(-45deg);
+            transform-origin: bottom right;
+        }
+        
+        .footer:after {
+            right: calc(50% - 1cm); /* Adjusted the position to create a 2cm slit */
+            transform: skew(45deg);
+            transform-origin: bottom left;
+        }
+
+        /* Added a new class for the slit */
+        .footer-slit {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 1cm); /* Adjusted the position to center the 2cm slit */
+            width: 2cm; /* Set the width to 2cm */
+            height: 1cm; /* Set the height to 1cm */
+            background-color: yellow;
+            transform: skew(-45deg); /* Added skew transformation to create the V shape */
+            transform-origin: top;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pinak Idea Lab</h1>
+        <img class="smiley" src="smiley.png" alt="Smiley Image">
+    </div>
+    <div class="footer">
+        <div class="footer-slit"></div> <!-- Added the slit element -->
+    </div>
+</body>
+</html>
